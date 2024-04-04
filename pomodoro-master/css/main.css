@@ -1,0 +1,155 @@
+html {
+    font-size: 14px;
+}
+@media (min-width: 544px) {
+    html {
+        font-size: 16px;
+    }
+}
+@media (min-width: 768px) {
+    html {
+        font-size: 18px;
+    }
+}
+@media (min-width: 992px) {
+    html {
+        font-size: 20px;
+    }
+}
+@media (min-width: 1200px) {
+    html {
+        font-size: 22px;
+    }
+}
+@media (min-width: 1800px) {
+    html {
+        font-size: 28px;
+    }
+}
+body{
+    color: rgba(0, 0, 0, 0.85);
+    transition: background-color 1s ease-in-out;
+}
+input{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    display: inline-block !important;
+    width: 4rem;
+}
+.controls{
+    font-size: 2rem;
+}
+#circle__wrapper{
+    position: relative;
+}
+#inner{
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    border: 10px solid rgb(255, 0, 0);
+    border-radius: 50%;
+    cursor: pointer;
+}
+#outer{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    transition: transform 0.2s ease-in-out;
+}
+input:focus{
+    background-color: rgba(0, 255, 0, 0.05);
+}
+/* validate input classes */
+.input-error{
+    outline: none;
+    border: 1px solid rgb(255, 0, 0);
+    background-color: rgba(255, 0, 0, 0.15) !important;
+}
+.alert-warning, #timer, #stop-msg, #work-indicator__wrapper, #break-indicator__wrapper{
+    display: none;
+}
+.controls span{
+    cursor: pointer;
+}
+.increment:hover,
+.decrement:hover,
+#stop-msg:hover,
+#start-msg:hover{
+    color: rgb(0, 190, 0) !important;
+}
+#start-msg{
+    font-size: 4rem;
+    font-weight: lighter;
+}
+#timer{
+    font-size: 4rem;
+    font-weight: 300;
+}
+#timer__min,
+#timer__sec{
+    display: inline-block;
+    width: 5rem;
+}
+/* work session style */
+body[data-session="work"]{
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+body[data-session="work"] #settings__wrapper{
+    display: none;
+}
+body[data-session="work"] #start-msg{
+    display: none;
+}
+body[data-session="work"] #timer,
+body[data-session="work"] #stop-msg,
+body[data-session="work"] #work-indicator__wrapper{
+    display: block;
+}
+
+/* break session style */
+body[data-session="break"]{
+    color: white;
+    background-color: #6e96fa;
+}
+body[data-session="break"] #settings__wrapper{
+    display: none;
+}
+body[data-session="break"] #start-msg{
+    display: none;
+}
+body[data-session="break"] #timer,
+body[data-session="break"] #stop-msg,
+body[data-session="break"] #break-indicator__wrapper{
+    display: block;
+}
+#audio__switch{
+    position: fixed;
+    cursor: pointer;
+    width: 1rem;
+    top: 0.3rem;
+    right: 2.2rem;
+    font-family: FontAwesome;
+    color: rgba(180, 180, 180, 0.8);
+    font-size: 2.5rem;
+}
+#audio__switch[data-audio="off"]:hover{
+    color: rgb(0, 190, 0) !important;
+}
+#audio__switch[data-audio="on"]:hover{
+    color: rgb(255, 0, 0) !important;
+}
+#audio__switch[data-audio="on"]::before{
+    content: '\f028';
+}
+#audio__switch[data-audio="off"]::before{
+    content: '\f026';
+}
+/* prevent timer from dragging when scrollbar appears while circle rotates */
+body[data-session="break"],
+body[data-session="work"]
+{
+    overflow: hidden !important;
+}

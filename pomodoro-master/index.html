@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Pomodoro timer</title>
+    <meta name="description" content="Pomodoro timer is a free online timer that helps you manage your work activity with pomodoro technique"/>
+    <meta name="keywords" content="pomodoro, timer, pomodoro technique, tomato timer, online timer, digital timer, work timer"/>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- custom style -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body data-session="setup">
+<div class="container-fluid">
+    <div id="settings__wrapper" class="row text-center">
+        <div id="settings__heading" class="col-12  mt-3">
+            <h4 class="mb-0">Setup pomodoro timer and start</h4>
+        </div>
+        <div class="col-10 offset-1 alert alert-warning mt-3" role="alert" aria-hidden="true">
+            <strong>Invalid input!</strong> Provide integer number of minutes between 1 and 60.
+        </div>
+        <div id="settings__work" class="col-sm-6">
+            <h6 class="col-12 mb-0 mt-3">Work, <small>min.</small></h6>
+            <div class="controls col-12">
+                <span class="decrement" onmousedown="return false">-</span>
+                <label><input class="text-center" id="work__input" type="text" name="work-input" value="25"></label>
+                <span class="increment" onmousedown="return false">+</span>
+            </div>
+        </div>
+        <div id="settings__break" class="col-sm-6">
+            <h6 class="col-12 mb-0 mt-3">Break, <small>min.</small></h6>
+            <div class="controls col-12">
+                <span class="decrement" onmousedown="return false">-</span>
+                <label><input class="text-center" id="break__input" type="text" name="break-input" value="5"></label>
+                <span class="increment" onmousedown="return false">+</span>
+            </div>
+        </div>
+    </div>
+    <div id="work-indicator__wrapper" class="row text-center">
+        <div id="work-indicator__heading" class="col-12  mt-4 mb-4">
+            <h1 class="mb-0">Work</h1>
+        </div>
+    </div>
+    <div id="break-indicator__wrapper" class="row text-center">
+        <div id="break-indicator__heading" class="col-12  mt-4 mb-4">
+            <h1 class="mb-0">Break</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div id="circle__wrapper" class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center">
+            <div id="outer">
+                <img src="img/triangle-60-100.png" class="img-fluid">
+            </div>
+            <div id="inner" class="d-flex flex-column justify-content-center">
+                <div id="start-msg" class="pt-2 pb-3">Start!</div>
+                <div id="timer">
+                    <span id="timer__min" class="text-right"></span><span id="timer__spacer">:</span><span id="timer__sec" class="text-left"></span>
+                </div>
+                <div id="stop-msg" class="pb-2 text-muted">Click to stop</div>
+            </div>
+        </div>
+    </div>
+    <div id="audio__wrapper" class="row">
+        <div class="col-12">
+            <audio id="audio__alarm">
+                <source src="sound/alarm.mp3" type="audio/mp3">
+                <source src="sound/alarm.ogg" type="audio/ogg">
+                <source src="sound/alarm.wav" type="audio/wav">
+
+            </audio>
+            <audio id="audio__tick" loop preload="auto">
+                <source src="sound/tick.mp3" type="audio/mp3">
+                <source src="sound/tick.ogg" type="audio/ogg">
+                <source src="sound/tick.wav" type="audio/wav">
+                <source src="sound/tick_ie.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+    <!-- Positioned fixed audio switch -->
+    <div id="audio__switch" data-audio="on">
+    </div>
+</div>
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
